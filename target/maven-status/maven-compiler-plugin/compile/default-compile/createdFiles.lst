@@ -1,0 +1,8 @@
+pl/polsl/model/Project.class
+pl/polsl/controller/MainController.class
+pl/polsl/model/Task.class
+pl/polsl/enums/Status.class
+pl/polsl/enums/Priority.class
+pl/polsl/view/MainView.class
+pl/polsl/main/Main.class
+pl/polsl/model/User.class
