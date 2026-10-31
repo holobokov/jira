@@ -1,8 +1,13 @@
+pl/polsl/model/User$Builder.class
+pl/polsl/model/Project$Builder.class
 pl/polsl/model/Project.class
-pl/polsl/controller/MainController.class
-pl/polsl/model/Task.class
-pl/polsl/enums/Status.class
+pl/polsl/model/Comment.class
 pl/polsl/enums/Priority.class
-pl/polsl/view/MainView.class
 pl/polsl/main/Main.class
+pl/polsl/controller/MainController.class
+pl/polsl/model/Issue.class
+pl/polsl/view/MainView.class
+pl/polsl/model/Issue$Builder.class
+pl/polsl/exceptions/InvalidIssueException.class
+pl/polsl/enums/IssueStatus.class
 pl/polsl/model/User.class

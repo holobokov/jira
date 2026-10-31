@@ -5,6 +5,7 @@ import java.util.Scanner;
 import pl.polsl.enums.Priority;
 import pl.polsl.enums.IssueStatus;
 import pl.polsl.model.Issue;
+import pl.polsl.model.Project;
 import pl.polsl.model.User;
 import pl.polsl.view.MainView;
 
@@ -20,19 +21,69 @@ public class MainController {
         this.scanner = scanner;
     }
     
-    public Issue createTask() {
-        view.askForTaskName();
+    public User createUser() {
+        view.user();
+        
+        view.askForId();
+        long id = scanner.nextLong();
+        scanner.nextLine();
+        
+        view.askForUsername();
+        String username = scanner.nextLine().trim();
+        
+        view.askForUserFullName();
+        String userFullName = scanner.nextLine().trim();
+        
+        return new User.Builder()
+                .id(id)
+                .username(username)
+                .fullName(userFullName)
+                .build();
+    }
+    
+    public Project createProject() {
+        view.project();
+        
+        view.askForId();
+        long id = scanner.nextLong();
+        scanner.nextLine();
+        
+        view.askForProjectKey();
+        String key = scanner.nextLine().trim();
+        
+        view.askForProjectName();
+        String name = scanner.nextLine().trim();
+        
+        return new Project.Builder()
+                .id(id)
+                .key(key)
+                .name(name)
+                .build();
+    }
+    
+    public Issue createIssue() {
+        view.issue();
+        
+        view.askForId();
+        long id = scanner.nextLong();
+        scanner.nextLine();
+        
+        view.askForIssueName();
         String taskName = scanner.nextLine().trim();
         
-        //view.askForPriority();
+        view.askForIssueKey();
+        String issueKey = scanner.nextLine().trim();
+        
+        view.askForPriority();
+        view.askForStatus();
+        
+        view.askForProjectKey();
         
         
-        view.askForUserFirstName();
-        String userFirstName = scanner.nextLine().trim();
-        
-        view.askForUserLastName();
-        String userLastName = scanner.nextLine().trim();
-        
-        return new Issue(taskName, IssueStatus.TO_DO, Priority.LOW, new User(userFirstName, userLastName));
+        return new Issue.Builder()
+                .id(id)
+                .issueKey(issueKey)
+                .title(taskName)
+                .build();
     }
 }

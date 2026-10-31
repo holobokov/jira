@@ -1,8 +1,10 @@
 /home/holobokov/Projects/NetBeansProjects/jira_1/src/main/java/pl/polsl/controller/MainController.java
+/home/holobokov/Projects/NetBeansProjects/jira_1/src/main/java/pl/polsl/enums/IssueStatus.java
 /home/holobokov/Projects/NetBeansProjects/jira_1/src/main/java/pl/polsl/enums/Priority.java
-/home/holobokov/Projects/NetBeansProjects/jira_1/src/main/java/pl/polsl/enums/Status.java
+/home/holobokov/Projects/NetBeansProjects/jira_1/src/main/java/pl/polsl/exceptions/InvalidIssueException.java
 /home/holobokov/Projects/NetBeansProjects/jira_1/src/main/java/pl/polsl/main/Main.java
+/home/holobokov/Projects/NetBeansProjects/jira_1/src/main/java/pl/polsl/model/Comment.java
+/home/holobokov/Projects/NetBeansProjects/jira_1/src/main/java/pl/polsl/model/Issue.java
 /home/holobokov/Projects/NetBeansProjects/jira_1/src/main/java/pl/polsl/model/Project.java
-/home/holobokov/Projects/NetBeansProjects/jira_1/src/main/java/pl/polsl/model/Task.java
 /home/holobokov/Projects/NetBeansProjects/jira_1/src/main/java/pl/polsl/model/User.java
 /home/holobokov/Projects/NetBeansProjects/jira_1/src/main/java/pl/polsl/view/MainView.java
