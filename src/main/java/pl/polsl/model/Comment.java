@@ -1,13 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pl.polsl.model;
 
 /**
+ * Represents a comment associated with a domain object.
  *
- * @author holobokov
+ * @author Oleksandr Holobokov
+ * @version 1.1
  */
 public class Comment {
-    
+
+    /**
+     * Creates an empty comment.
+     */
+    public Comment() {
+    }
 }

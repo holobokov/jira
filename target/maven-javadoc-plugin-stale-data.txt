@@ -1,0 +1,49 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+--release
+26
+-sourcepath
+'/home/holobokov/Projects/NetBeansProjects/jira_1/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2026. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/holobokov/Projects/NetBeansProjects/jira_1/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'jira_1 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'jira_1 1.0-SNAPSHOT API'
+pl.polsl.model
+pl.polsl.controller
+pl.polsl.main
+pl.polsl.view
+pl.polsl.enums
+pl.polsl.exceptions
+pl.polsl
+/home/holobokov/Projects/NetBeansProjects/jira_1/src/main/java = 1792412328937
+/home/holobokov/Projects/NetBeansProjects/jira_1/target/reports/apidocs/element-list = 1793576699093
+/home/holobokov/Projects/NetBeansProjects/jira_1/target/reports/apidocs/serialized-form.html = 1793576699166
+/home/holobokov/Projects/NetBeansProjects/jira_1/target/reports/apidocs/overview-tree.html = 1793576699281
+/home/holobokov/Projects/NetBeansProjects/jira_1/target/reports/apidocs/index.html = 1793576699286
+/home/holobokov/Projects/NetBeansProjects/jira_1/target/reports/apidocs/allclasses-index.html = 1793576699312
+/home/holobokov/Projects/NetBeansProjects/jira_1/target/reports/apidocs/allpackages-index.html = 1793576699315
+/home/holobokov/Projects/NetBeansProjects/jira_1/target/reports/apidocs/module-search-index.js = 1793576699317
+/home/holobokov/Projects/NetBeansProjects/jira_1/target/reports/apidocs/package-search-index.js = 1793576699318
+/home/holobokov/Projects/NetBeansProjects/jira_1/target/reports/apidocs/type-search-index.js = 1793576699318
+/home/holobokov/Projects/NetBeansProjects/jira_1/target/reports/apidocs/member-search-index.js = 1793576699319
+/home/holobokov/Projects/NetBeansProjects/jira_1/target/reports/apidocs/tag-search-index.js = 1793576699320
+/home/holobokov/Projects/NetBeansProjects/jira_1/target/reports/apidocs/index-all.html = 1793576699357
+/home/holobokov/Projects/NetBeansProjects/jira_1/target/reports/apidocs/search.html = 1793576699358
+/home/holobokov/Projects/NetBeansProjects/jira_1/target/reports/apidocs/overview-summary.html = 1793576699360
+/home/holobokov/Projects/NetBeansProjects/jira_1/target/reports/apidocs/help-doc.html = 1793576699365
