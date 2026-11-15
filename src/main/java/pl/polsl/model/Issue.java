@@ -42,7 +42,7 @@ public class Issue {
      *
      * @param builder source of the issue values
      */
-    private Issue(Builder builder) {
+    protected Issue(Builder builder) {
         this.id = builder.id;
         this.issueKey = builder.issueKey;
         this.title = builder.title;
