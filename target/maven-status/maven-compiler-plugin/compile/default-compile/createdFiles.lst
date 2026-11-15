@@ -1,6 +1,7 @@
 pl/polsl/model/Project$Builder.class
 pl/polsl/model/Task.class
 pl/polsl/exceptions/package-info.class
+pl/polsl/main/MainFrame$1.class
 pl/polsl/model/Issue$Builder.class
 pl/polsl/model/User$Builder.class
 pl/polsl/model/Project.class
