@@ -1,8 +1,14 @@
 
 package pl.polsl.main;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import javax.swing.SwingUtilities;
 import pl.polsl.controller.MainController;
+import pl.polsl.enums.IssueStatus;
+import pl.polsl.enums.Priority;
+import pl.polsl.model.Issue;
 import pl.polsl.view.MainView;
 
 /**
@@ -33,9 +39,19 @@ public class Main {
          * 10. priority, 11. status.
          * If the argument count differs from 11, data is read interactively.
          */
-        MainView view = new MainView();
-        Scanner scanner = new Scanner(System.in);
-        MainController controller = new MainController(view, scanner);
-        controller.run(args);
+        Issue issue1 = Issue.builder().id(123).title("Zaczac projekt").issueKey("WEB-123").priority(Priority.HIGH).status(IssueStatus.TO_DO).build();
+        Issue issue2 = Issue.builder().id(321).title("Przypisac usera").issueKey("WEB-321").priority(Priority.HIGH).status(IssueStatus.IN_PROGRESS).build();
+        Issue issue3 = Issue.builder().id(222).title("Naprawic buga").issueKey("WEB-222").priority(Priority.HIGH).status(IssueStatus.TO_DO).build();
+
+        List<Issue> issues = new ArrayList<Issue>();
+        
+        issues.add(issue1);
+        issues.add(issue2);
+        issues.add(issue3);
+        
+        SwingUtilities.invokeLater(() -> {
+            MainFrame frame = new MainFrame(issues);
+            frame.setVisible(true);
+        });
     }
 }
