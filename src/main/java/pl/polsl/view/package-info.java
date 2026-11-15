@@ -1,5 +1,5 @@
 /**
- * Contains classes responsible for console presentation and input prompts.
+ * Contains classes responsible for Swing presentation.
  * Documentation comments in this package were generated with the assistance
  * of artificial intelligence.
  *

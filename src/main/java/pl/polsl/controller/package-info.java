@@ -1,6 +1,5 @@
 /**
- * Contains controllers that coordinate application input, domain operations,
- * and output.
+ * Contains controllers that coordinate GUI input and domain operations.
  * Documentation comments in this package were generated with the assistance
  * of artificial intelligence.
  *

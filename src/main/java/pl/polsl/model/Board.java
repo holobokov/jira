@@ -42,7 +42,7 @@ public class Board {
     public void addIssue(Issue issue) {
         if (issue != null && !issues.contains(issue)) {
             issues.add(issue);
-            if (project != null) {
+            if (project != null && !project.getIssues().contains(issue)) {
                 project.addIssue(issue);
             }
         }

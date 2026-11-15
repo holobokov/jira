@@ -1,18 +1,10 @@
 
 package pl.polsl.main;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 import javax.swing.SwingUtilities;
-import pl.polsl.controller.MainController;
-import pl.polsl.enums.IssueStatus;
-import pl.polsl.enums.Priority;
-import pl.polsl.model.Issue;
-import pl.polsl.view.MainView;
 
 /**
- * Starts the Jira console application.
+ * Starts the Jira Swing application.
  *
  * @author Oleksandr Holobokov
  * @version 1.1
@@ -26,31 +18,13 @@ public class Main {
     }
 
     /**
-     * Creates the MVC components and starts the controller.
+     * Starts the Swing window. Model objects are created by GUI actions.
      *
      * @param args command-line arguments in the documented order
      */
     public static void main(String[] args) {
-        /*
-         * Argument order:
-         * 1. user id, 2. username, 3. full name,
-         * 4. project id, 5. project key, 6. project name,
-         * 7. issue id, 8. issue title, 9. issue key,
-         * 10. priority, 11. status.
-         * If the argument count differs from 11, data is read interactively.
-         */
-        Issue issue1 = Issue.builder().id(123).title("Zaczac projekt").issueKey("WEB-123").priority(Priority.HIGH).status(IssueStatus.TO_DO).build();
-        Issue issue2 = Issue.builder().id(321).title("Przypisac usera").issueKey("WEB-321").priority(Priority.HIGH).status(IssueStatus.IN_PROGRESS).build();
-        Issue issue3 = Issue.builder().id(222).title("Naprawic buga").issueKey("WEB-222").priority(Priority.HIGH).status(IssueStatus.TO_DO).build();
-
-        List<Issue> issues = new ArrayList<Issue>();
-        
-        issues.add(issue1);
-        issues.add(issue2);
-        issues.add(issue3);
-        
         SwingUtilities.invokeLater(() -> {
-            MainFrame frame = new MainFrame(issues);
+            MainFrame frame = new MainFrame();
             frame.setVisible(true);
         });
     }

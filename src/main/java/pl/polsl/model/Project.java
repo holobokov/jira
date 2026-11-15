@@ -28,6 +28,8 @@ public class Project {
     private List<User> members;
     /** Issues belonging to the project. */
     private List<Issue> issues;
+    /** Board associated with the project. */
+    private final Board board;
     
 
     /**
@@ -42,7 +44,15 @@ public class Project {
         this.description = builder.description;
         this.owner = builder.owner;
         this.members = new ArrayList<>(builder.members);
-        this.issues = new ArrayList<>(builder.issues);
+        this.issues = new ArrayList<>();
+        this.board = Board.builder()
+                .id(id)
+                .name(name + " Board")
+                .project(this)
+                .build();
+        for (Issue issue : builder.issues) {
+            addIssue(issue);
+        }
     }
 
     /**
@@ -63,10 +73,22 @@ public class Project {
      * @param issue issue to add
      */
     public void addIssue(Issue issue) {
-        if (issue != null) {
+        if (issue != null && !issues.contains(issue)) {
             issues.add(issue);
             issue.setProject(this);
+            if (!board.getIssues().contains(issue)) {
+                board.addIssue(issue);
+            }
         }
+    }
+
+    /**
+     * Returns the board associated with this project.
+     *
+     * @return project board
+     */
+    public Board getBoard() {
+        return board;
     }
     
     /**

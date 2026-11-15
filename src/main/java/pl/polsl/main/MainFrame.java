@@ -4,10 +4,6 @@
  */
 package pl.polsl.main;
 
-import java.util.List;
-import javax.swing.table.DefaultTableModel;
-import pl.polsl.model.Issue;
-
 /**
  *
  * @author holobokov
@@ -15,29 +11,12 @@ import pl.polsl.model.Issue;
 public class MainFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainFrame.class.getName());
-    private List<Issue> issues;
+
     /**
      * Creates new form MainFrame
      */
-    public MainFrame(List<Issue> issues) {
+    public MainFrame() {
         initComponents();
-        this.issues = issues;
-        fillTable();
-    }
-    
-    private void fillTable() {
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.setRowCount(0);
-
-        for (Issue issue : issues) {
-            model.addRow(new Object[]{
-                issue.getId(),
-                issue.getIssueKey(),
-                issue.getTitle(),
-                issue.getPriority(),
-                issue.getStatus()
-            });
-        }
     }
 
     /**
@@ -49,81 +28,302 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jToolBar1 = new javax.swing.JToolBar();
         jButton1 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        projectTab = new javax.swing.JPanel();
+        projectIdField = new javax.swing.JTextField();
+        projectKeyField = new javax.swing.JTextField();
+        projectNameField = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        projectDescriptionArea = new javax.swing.JTextArea();
+        projectButtonsPanel = new javax.swing.JPanel();
+        createProjectButton = new javax.swing.JButton();
+        editProjectButton = new javax.swing.JButton();
+        clearProjectButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        boardTab = new javax.swing.JPanel();
+        issueTab = new javax.swing.JPanel();
+        userTab = new javax.swing.JPanel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
-        jLabel1.setText("Issues");
+        jToolBar1.setRollover(true);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "id", "issueKey", "title", "priority", "status"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        jButton1.setText("New Issue");
+        jButton1.setFocusable(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton1);
 
-        jButton1.setText("Add");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        jButton5.setText("Edit Issue");
+        jButton5.setFocusable(false);
+        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton5);
+
+        jButton2.setText("Delete Issue");
+        jButton2.setFocusable(false);
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton2);
+
+        jButton3.setText("Assign user");
+        jButton3.setFocusable(false);
+        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton3);
+
+        jButton4.setText("Refresh");
+        jButton4.setFocusable(false);
+        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton4);
+
+        projectIdField.addActionListener(this::projectIdFieldActionPerformed);
+
+        projectKeyField.addActionListener(this::projectKeyFieldActionPerformed);
+
+        projectNameField.addActionListener(this::projectNameFieldActionPerformed);
+
+        projectDescriptionArea.setColumns(20);
+        projectDescriptionArea.setRows(5);
+        projectDescriptionArea.setText("Web app is web app\n");
+        jScrollPane1.setViewportView(projectDescriptionArea);
+
+        createProjectButton.setText("Create project");
+        createProjectButton.addActionListener(this::createProjectButtonActionPerformed);
+
+        editProjectButton.setText("Edit project");
+
+        clearProjectButton.setText("Clear project");
+
+        javax.swing.GroupLayout projectButtonsPanelLayout = new javax.swing.GroupLayout(projectButtonsPanel);
+        projectButtonsPanel.setLayout(projectButtonsPanelLayout);
+        projectButtonsPanelLayout.setHorizontalGroup(
+            projectButtonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(projectButtonsPanelLayout.createSequentialGroup()
+                .addContainerGap(95, Short.MAX_VALUE)
+                .addGroup(projectButtonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(createProjectButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(clearProjectButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(editProjectButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(92, 92, 92))
+        );
+        projectButtonsPanelLayout.setVerticalGroup(
+            projectButtonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(projectButtonsPanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(createProjectButton)
+                .addGap(18, 18, 18)
+                .addComponent(editProjectButton)
+                .addGap(18, 18, 18)
+                .addComponent(clearProjectButton)
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+
+        jLabel1.setText("Enter id");
+
+        jLabel2.setText("Enter key");
+
+        jLabel3.setText("Enter name");
+
+        jLabel4.setText("Enter desciption");
+
+        javax.swing.GroupLayout projectTabLayout = new javax.swing.GroupLayout(projectTab);
+        projectTab.setLayout(projectTabLayout);
+        projectTabLayout.setHorizontalGroup(
+            projectTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(projectTabLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(projectTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4))
+                .addGap(38, 38, 38)
+                .addGroup(projectTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(projectNameField)
+                    .addGroup(projectTabLayout.createSequentialGroup()
+                        .addGroup(projectTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(projectTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(projectIdField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                .addComponent(projectKeyField, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(66, 66, 66)
+                .addComponent(projectButtonsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
+        );
+        projectTabLayout.setVerticalGroup(
+            projectTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(projectTabLayout.createSequentialGroup()
+                .addGroup(projectTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(projectTabLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(projectTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(projectIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(projectTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(projectKeyField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(14, 14, 14)
+                        .addGroup(projectTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(projectNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addGap(18, 18, 18)
+                        .addGroup(projectTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)))
+                    .addGroup(projectTabLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(projectButtonsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(134, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Project", projectTab);
+
+        javax.swing.GroupLayout boardTabLayout = new javax.swing.GroupLayout(boardTab);
+        boardTab.setLayout(boardTabLayout);
+        boardTabLayout.setHorizontalGroup(
+            boardTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 868, Short.MAX_VALUE)
+        );
+        boardTabLayout.setVerticalGroup(
+            boardTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 395, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Board", boardTab);
+
+        javax.swing.GroupLayout issueTabLayout = new javax.swing.GroupLayout(issueTab);
+        issueTab.setLayout(issueTabLayout);
+        issueTabLayout.setHorizontalGroup(
+            issueTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 868, Short.MAX_VALUE)
+        );
+        issueTabLayout.setVerticalGroup(
+            issueTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 395, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Issue", issueTab);
+
+        javax.swing.GroupLayout userTabLayout = new javax.swing.GroupLayout(userTab);
+        userTab.setLayout(userTabLayout);
+        userTabLayout.setHorizontalGroup(
+            userTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 868, Short.MAX_VALUE)
+        );
+        userTabLayout.setVerticalGroup(
+            userTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 395, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("User", userTab);
+
+        jMenu1.setText("File");
+
+        jMenuItem2.setText("New project");
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setText("New user");
+        jMenu1.add(jMenuItem3);
+
+        jMenuItem4.setText("Close");
+        jMenu1.add(jMenuItem4);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Help");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jButton1))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTabbedPane1)
+                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(41, 41, 41)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addComponent(jButton1)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void projectIdFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_projectIdFieldActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.addRow(new Object[] {
-            issues.get(0).getId(),
-            issues.get(0).getIssueKey(),
-            issues.get(0).getTitle(),
-            issues.get(0).getPriority(),
-            issues.get(0).getStatus()
-        });
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_projectIdFieldActionPerformed
 
+    private void createProjectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createProjectButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_createProjectButtonActionPerformed
+
+    private void projectKeyFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_projectKeyFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_projectKeyFieldActionPerformed
+
+    private void projectNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_projectNameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_projectNameFieldActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel boardTab;
+    private javax.swing.JButton clearProjectButton;
+    private javax.swing.JButton createProjectButton;
+    private javax.swing.JButton editProjectButton;
+    private javax.swing.JPanel issueTab;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JPanel projectButtonsPanel;
+    private javax.swing.JTextArea projectDescriptionArea;
+    private javax.swing.JTextField projectIdField;
+    private javax.swing.JTextField projectKeyField;
+    private javax.swing.JTextField projectNameField;
+    private javax.swing.JPanel projectTab;
+    private javax.swing.JPanel userTab;
     // End of variables declaration//GEN-END:variables
 }
